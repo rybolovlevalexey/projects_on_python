@@ -1,9 +1,17 @@
-import math
-sp1 = list(i for i in range(51, 101))
-sp2 = list(i for i in range(1, 51))
-res = 1
-for elem in sp1:
-    res *= elem
-for elem in sp2:
-    res /= elem
+from decimal import *
+cnt = 0
+ans = 0
+for x in range(1, 9):
+    for y in range(1, 9):
+        for i in range(1, 9):
+            for j in range(1, 9):
+                if i == x and j == y:
+                    continue
+                cnt += 1
+                if x == i or y == j:
+                    ans += 1
+print(cnt, ans, 64*63)
+res1 = Decimal(ans)
+res2 = Decimal(cnt)
+res = res1 / res2
 print(res)
